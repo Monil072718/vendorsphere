@@ -3,14 +3,31 @@ import mongoose from 'mongoose';
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, 'Please provide a name for this user.'],
+    required: [true, 'Please provide a name.'],
     maxlength: [60, 'Name cannot be more than 60 characters'],
   },
   email: {
     type: String,
-    required: [true, 'Please provide an email for this user.'],
-    maxlength: [60, 'Email cannot be more than 60 characters'],
+    required: [true, 'Please provide an email.'],
+    unique: true,
+    lowercase: true,
+    trim: true,
   },
+  password: {
+    type: String,
+    required: [true, 'Please provide a password.'],
+    select: false, // Don't return password by default
+  },
+  image: {
+    type: String,
+  },
+  role: {
+    type: String,
+    enum: ['user', 'admin'],
+    default: 'user',
+  },
+}, {
+  timestamps: true,
 });
 
 export default mongoose.models.User || mongoose.model('User', UserSchema);

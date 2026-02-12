@@ -2,6 +2,8 @@ import { z } from 'zod';
 
 const envSchema = z.object({
   MONGODB_URI: z.string().min(1, "MONGODB_URI is required"),
+  JWT_SECRET: z.string().min(1, "JWT_SECRET is required"),
+  JWT_REFRESH_SECRET: z.string().min(1, "JWT_REFRESH_SECRET is required"),
   NODE_ENV: z.enum(['development', 'test', 'production']).default('development'),
 });
 

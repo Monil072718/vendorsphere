@@ -1,0 +1,32 @@
+
+> vendorsphere@0.1.0 build
+> next build
+
+▲ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 1 errors:
+./src/lib/auth.ts:1:1
+Module not found: Can't resolve 'bcryptjs'
+[0m[31m[1m>[22m[39m[90m 1 |[39m [36mimport[39m { hash[33m,[39m compare } [36mfrom[39m [32m'bcryptjs'[39m[33m;[39m
+ [90m   |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 2 |[39m [36mexport[39m { signJWT[33m,[39m verifyJWT } [36mfrom[39m [32m'./jwt'[39m[33m;[39m
+ [90m 3 |[39m
+ [90m 4 |[39m [36mexport[39m [36masync[39m [36mfunction[39m hashPassword(password[33m:[39m string)[33m:[39m [33mPromise[39m[33m<[39m[33mstring[39m[33m>[39m {[0m
+
+
+
+Import trace:
+  App Route:
+    ./src/lib/auth.ts
+    ./src/app/api/vendors/route.ts
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (./src/lib/auth.ts:1:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
